@@ -46,7 +46,7 @@
         const onScanSuccess = (decodedText, decodedResult) => {
             html5QrCode.stop().then(() => {
                 const finalUrl = activeLinkTemplate.replace("REPLACE_ME", decodedText);
-                window.location.href = finalUrl;
+                window.open(finalUrl, '_blank');
             }).catch(err => console.error("Грешка при спиране на камерата.", err));
         };
 
