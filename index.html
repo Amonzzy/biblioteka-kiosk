@@ -32,8 +32,8 @@
     <script src="https://unpkg.com/html5-qrcode/html5-qrcode.min.js"></script>
     <script>
         // *** ПОСТАВЕТЕ ВАШИТЕ ДВА ЛИНКА ТУК ***
-        const borrowLinkTemplate = "https://docs.google.com/forms/d/e/1FAIpQLSdyCxH8dnkprD3RxR54Aom-K31hX9JFzyLy5ZdQazNfDkoRrQ/viewform?usp=pp_url&entry.1265506884=%D0%97%D0%90%D0%9C%D0%95%D0%A1%D0%A2%D0%98_%D0%9C%D0%95";
-        const returnLinkTemplate = "https://docs.google.com/forms/d/e/1FAIpQLScbWvCRRVfp9et73sYqDaVTNYepHWz6Q_0_nZdBqSbY75NzKw/viewform?usp=pp_url&entry.1868106357=%D0%97%D0%90%D0%9C%D0%95%D0%A1%D0%A2%D0%98_%D0%9C%D0%95";
+        const borrowLinkTemplate = "https://docs.google.com/forms/d/e/1FAIpQLSdyCxH8dnkprD3RxR54Aom-K31hX9JFzyLy5ZdQazNfDkoRrQ/viewform?usp=pp_url&entry.1265506884=REPLACE_ME";
+        const returnLinkTemplate = "https://docs.google.com/forms/d/e/1FAIpQLScbWvCRRVfp9et73sYqDaVTNYepHWz6Q_0_nZdBqSbY75NzKw/viewform?usp=pp_url&entry.1868106357=REPLACE_ME";
 
         const borrowButton = document.getElementById('borrowButton');
         const returnButton = document.getElementById('returnButton');
@@ -45,7 +45,7 @@
 
         const onScanSuccess = (decodedText, decodedResult) => {
             html5QrCode.stop().then(() => {
-                const finalUrl = activeLinkTemplate.replace("ЗАМЕСТИ_МЕ", decodedText);
+                const finalUrl = activeLinkTemplate.replace("REPLACE_ME", decodedText);
                 window.location.href = finalUrl;
             }).catch(err => console.error("Грешка при спиране на камерата.", err));
         };
